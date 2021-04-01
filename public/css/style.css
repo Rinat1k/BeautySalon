@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    margin-top:80px;
+}
+
+p {
+    margin: 0;
+}
+
+.navbar-brand {
+	margin: 0;
+}
+
+header {
+	background: #fff;
+}
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+
+header select {
+	width: 6em;
+	border-radius: 0;
+}
+
+section {
+	padding: 10px 0;
+}
+
+
+ul {
+	list-style: none; 
+  	margin: 0px; 
+ 	padding-left: 0px;
+}
+
+
+
+.navbar {
+	padding: 0px;
+}
+
+nav .nav-link {
+	padding-left: 0;
+	margin-right: 20px;
+	color: #fff;
+}
+
+nav .nav-link:hover {
+	color: #555;
+}
+
+nav {
+	padding: 0;
+	background-color: #A7A7A7;
+}
+
+
+footer {
+	padding: 15px;
+	background-color: #E6E6E6;
+	text-align: center;
+}
+
+footer a {
+	color: #595959;
+}
+
+
+.social .nav-link {
+	padding: 0;
+	margin: 0 7px;
+}
+
+.social img {
+	fill: red;
+}
+
+footer img {
+	width:20px;
+}
+
+footer .navbar-brand {
+	font-size: 2em;
+}
+
+footer .navbar {
+	margin: 5px 0;
+}
+
+
+.advantages {
+	padding: 50px 0;
+	background: #F7F7F7;
+}
+
+h2 {
+	color: #5A5A5A;
+	font-weight: 600;
+}
+
+.advantage-item {
+	padding: 20px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.advantage-item img {
+	border-radius:15px;
+	margin: 10px;
+	width: 30%;
+}
+
+.advert {
+	padding: 0;
+}
+
+.advert img {
+	width: 100%;
+	overflow: hidden;
+}
+
+
+.popular-item {
+	border: 1px solid #A8A8A8; 
+	border-radius: 10px;
+	display: flex;
+	overflow: hidden;
+	margin-top: 20px;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.popular-item-photo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	width: 40%;
+	background: #5B5B5B;
+	border: 1px solid #5B5B5B; 
+	color: #E7E7E7;
+}
+
+.popular-item-photo img {
+	width: 100%;
+}
+
+.popular-item-desc {
+	color: #5B5B5B;
+	padding: 13px;
+	width: 60%;
+}
+
+.popular-item-desc button {
+	background-color: #5B5B5B;
+  	border: none;
+  	color: #E7E7E7;
+  	padding: 5px 32px;
+  	border-radius: 7px;
+  	text-align: center;
+  	text-decoration: none;
+}
+
+.popular-item-desc-text {
+	line-height: 1.2;
+}
+
+
+.map {
+	padding: 0;
+}
+
+.map-filters, .catalog-filters {
+	background: #E6E6E6;
+}
+
+.map-filters select, .catalog-filters select {
+	width: 8em;
+	padding: 10px 10px;
+}
+
+.catalog-results select {
+	width: 14em;
+	padding: 10px 10px;
+}
+
+#button-search{
+	width: 100%;
+	border: none;
+	padding: 5px 32px;
+	color: #fff;
+	background-color: #A7A7A7;
+}
+
+#input-search{
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+}
