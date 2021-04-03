@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     $(".close_modal").on("click", function(){
-        $(".modal").css("display", "none");
+        $(".modals_wrapper").css("display", "none");
     });
     /*
     $("body").on("click", ".background_wrapper", function(){
