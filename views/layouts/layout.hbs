@@ -5,11 +5,57 @@
         <link rel="stylesheet" href="/js/bootstrap/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="/css/style.css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> <!-- JQuery 3.6.0 -->
+        <script src="js/scripts/authorization.js"></script>
         <title>{{title}}</title>
     </head>
     <body>
         {{> header}}
         
+        <div class="modal" id="authorization_modal">
+            <form action="" method="post">
+                <a class="close_modal">Закрыть</a>
+                <div class="field-block">
+                    <label for="name">Email:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <label for="name">Пароль:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <button type="reset">Очистить</button>
+                    <button type="submit">Войти</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal" id="registration_modal">
+            <form action="" method="post">
+                <a class="close_modal">Закрыть</a>
+                <div class="field-block">
+                    <label for="ФИО">ФИО:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <label for="name">Email:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <label for="name">Пароль:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <label for="name">Повторите пароль:</label><br>
+                    <input type="text">
+                </div>
+                <div class="field-block">
+                    <button type="reset">Очистить</button>
+                    <button type="submit">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+
+
         {{{body}}}
         
         {{> footer}}
