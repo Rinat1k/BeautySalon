@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     $("#authorization_button").on("click", function(){
-        $("#authorization_modal").css("display", "flex"); 
+        $("#authorization_modal").css("display", "flex");
     });
     $("#registration_button").on("click", function(){
         $("#registration_modal").css("display", "flex"); 

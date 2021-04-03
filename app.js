@@ -2,9 +2,7 @@ const express = require("express");
 const exprhbs = require("express-handlebars");
 const path = require("path");
 const routes = require("./routes/index");
-
-
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; //номер порта
 const app = express();
 const hbs = exprhbs.create(
     {
@@ -13,7 +11,8 @@ const hbs = exprhbs.create(
         extname:"hbs"
     }
 );
-//hbs.registerPartials(__dirname + "/views/partials");
+const db = require("./db");
+const User = db.user;
 
 app.engine("hbs",hbs.engine);
 
@@ -25,6 +24,5 @@ app.use("/",routes);
 
 app.listen(PORT, ()=>
 {
-    console.log(path.join(__dirname,"public"));
     console.log("Сервер запущен...");
 });
