@@ -12,48 +12,7 @@
     <body>
         {{> header}}
         
-        <div class="modal" id="authorization_modal">
-            <form action="" method="post">
-                <a class="close_modal">Закрыть</a>
-                <div class="field-block">
-                    <label for="name">Email:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <label for="name">Пароль:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <button type="reset">Очистить</button>
-                    <button type="submit">Войти</button>
-                </div>
-            </form>
-        </div>
-        <div class="modal" id="registration_modal">
-            <form action="" method="post">
-                <a class="close_modal">Закрыть</a>
-                <div class="field-block">
-                    <label for="ФИО">ФИО:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <label for="name">Email:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <label for="name">Пароль:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <label for="name">Повторите пароль:</label><br>
-                    <input type="text">
-                </div>
-                <div class="field-block">
-                    <button type="reset">Очистить</button>
-                    <button type="submit">Зарегистрироваться</button>
-                </div>
-            </form>
-        </div>
+        {{> modals}}
 
 
         {{{body}}}
