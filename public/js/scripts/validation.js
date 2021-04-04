@@ -17,9 +17,9 @@ $(document).ready(function(){
         "Проверьте корректность даты рождения"
     );
     $.validator.addMethod("pwcheck", function(value) {
-        return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
-            && /[a-z]/.test(value) // has a lowercase letter 
-            && /\d/.test(value) // has a digit
+        return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) 
+            && /[a-z]/.test(value) 
+            && /\d/.test(value) 
      });
     
     $("#form_authorization").validate({
@@ -43,6 +43,30 @@ $(document).ready(function(){
                 minlength: "Минимальная длина пароля должна быть 8 символов",
                 maxlength: "Пароль должен быть до 200 символов"
             }
+        },
+        submitHandler: function(form) {
+            console.log("запрос  об авторизации отослан");
+            $.ajax({    
+                url: $("#form_authorization").attr('action'),
+                data: $("#form_authorization").serialize(),
+                type: 'POST',
+                success: function(res){
+                    console.log(`Ошибкаа ли это? => ${res.isError}`);
+                    console.log(`Сообщение от сервера => ${res.message}`);
+                    // Действие при отсутствии нужного пользователя
+                    if(res.isError){
+                        $(".notifications_block").show();
+                        $(".notifications_block").text(res.message);
+                    } else {
+                        $(".notifications_block").hide();
+                        $(".modals_wrapper").hide();
+                    }
+                    
+                },
+                error: function(){
+                    console.log("Ошибка сервера");
+                }
+            });
         }
     });
     // Валидация формы регистрации
@@ -119,6 +143,31 @@ $(document).ready(function(){
                 required: "Это поле обязательно для заполнения",
                 equalTo: "Введённые пароли не совпадают"
             }
+        },
+        submitHandler: function(form) {
+        
+            console.log("запрос об регистрации отослан");
+            $.ajax({    
+                url: $("#form_registration").attr('action'),
+                data: $("#form_registration").serialize(),
+                type: 'POST',
+                success: function(res){
+                    console.log(`Ошибкаа ли это? => ${res.isError}`);
+                    console.log(`Сообщение от сервера => ${res.message}`);
+
+                    if(res.isError){
+                        $(".notifications_block").show();
+                        $(".notifications_block").text(res.message);
+                    } else {
+                        $(".notifications_block").hide();
+                        $(".modals_wrapper").hide();
+                    }
+                },
+                error: function(){
+                    console.log("Ошибка сервера");
+                }
+            });
+            
         }
     });
 });

@@ -5,56 +5,60 @@
             <button type="button">ВХОД</button>
             <button type="button">РЕГИСТРАЦИЯ</button>
         </div>
+        <div class="form_wrapper">
+            <form id="form_authorization" action="/login">
+                <div class="field-block">
+                    <input type="text" placeholder="Email" name="email">
+                </div>
+                <div class="field-block">
+                    <input type="password" placeholder="Пароль" name="password">
+                </div>
+                <div class="field-block">
+                    <button type="submit" method="post" id="login">Войти</button>
+                </div>
+            </form>
+            <form id="form_registration" action="/register">
+                <div class="field-block">
+                    <input type="text" placeholder="Имя" name="name">
+                </div>
+                <div class="field-block">
+                    <input type="text" placeholder="Фамилия" name="surName">
+                </div>
+                
+                <div class="field-block">
+                    <input type="text" placeholder="Email" name="email">
+                </div>
+                <div class="field-block">
+                    <input type="text" placeholder="Телефон" name="phoneNumber">
+                </div>
+                <div class="field-block">
+                    <input type="text" placeholder="Дата рождения" name="birthday">
+                </div>
+                <div class="field-block" id="field-block-gender">
+                    <span>
+                        <input type="radio" name="gender" value="М" style="vertical-align:middle;margin:0;"><span> мужской</span>
+                    </span>
+                </div>
+                <div class="field-block" id="field-block-gender">
+                    <span>
+                        <input type="radio" name="gender" value="Ж" style="vertical-align:middle;margin:0;"><span> женский</span>    
+                    </span>
+                    <label for="gender" class="error"></label>
+                </div>
 
-        <form id="form_authorization" action="/login">
-            <div class="field-block">
-                <input type="text" placeholder="Email" name="email">
+                <div class="field-block">
+                    <input type="password" placeholder="Пароль" name="password" id="mainpassword">
+                </div>
+                <div class="field-block">
+                    <input type="password" placeholder="Пароль ещё раз" name="password2">
+                </div>
+                <div class="field-block">
+                    <button type="submit" method="post" id ="register">Зарегистрироваться</button>
+                </div>
+            </form>
+            <div class="notifications_block">
             </div>
-            <div class="field-block">
-                <input type="password" placeholder="Пароль" name="password">
-            </div>
-            <div class="field-block">
-                <button id ="login">Войти</button>
-            </div>
-        </form>
-        <form id="form_registration" action="/register">
-            <div class="field-block">
-                <input type="text" placeholder="Имя" name="name">
-            </div>
-            <div class="field-block">
-                <input type="text" placeholder="Фамилия" name="surName">
-            </div>
-            
-            <div class="field-block">
-                <input type="text" placeholder="Email" name="email">
-            </div>
-            <div class="field-block">
-                <input type="text" placeholder="Телефон" name="phoneNumber">
-            </div>
-            <div class="field-block">
-                <input type="text" placeholder="Дата рождения" name="birthday">
-            </div>
-            <div class="field-block" id="field-block-gender">
-                <span>
-                    <input type="radio" name="gender" value="М" style="vertical-align:middle;margin:0;"><span> мужской</span>
-                </span>
-            </div>
-            <div class="field-block" id="field-block-gender">
-                <span>
-                    <input type="radio" name="gender" value="Ж" style="vertical-align:middle;margin:0;"><span> женский</span>    
-                </span>
-                <label for="gender" class="error"></label>
-            </div>
+        </div>
 
-            <div class="field-block">
-                <input type="password" placeholder="Пароль" name="password" id="mainpassword">
-            </div>
-            <div class="field-block">
-                <input type="password" placeholder="Пароль ещё раз" name="password2">
-            </div>
-            <div class="field-block">
-                <button id ="register">Зарегистрироваться</button>
-            </div>
-        </form>
     </div>
 </div>
