@@ -30,7 +30,8 @@ $(document).ready(function(){
             },
             password: {
                 required: true,
-                minlength: 8
+                minlength: 8,
+                maxlength: 200
             }
         },
         messages: {
@@ -39,7 +40,8 @@ $(document).ready(function(){
             },
             password: {
                 required: "Это поле обязательно для заполнения",
-                minlength: "Минимальная длина пароля должна быть 8 символов"
+                minlength: "Минимальная длина пароля должна быть 8 символов",
+                maxlength: "Пароль должен быть до 200 символов"
             }
         }
     });
@@ -48,15 +50,18 @@ $(document).ready(function(){
         rules: {
             name: {
                 required: true,
-                minlength: 3
+                minlength: 3,
+                maxlength: 200
             },
             surName: {
                 required: true,
-                minlength: 3
+                minlength: 3,
+                maxlength: 200
             },
             email: {
                 customEmail: true,
-                required: true
+                required: true,
+                maxlength: 200
             },
             phoneNumber: {
                 required: true
@@ -71,25 +76,29 @@ $(document).ready(function(){
             password: {
                 required: true,
                 pwcheck: true,
-                minlength: 8
+                minlength: 8,
+                maxlength: 200
             },
             password2: {
                 required: true, 
-                equalTo: '#mainpassword'  
+                equalTo: '#mainpassword' 
             }
         },
         messages: {
             name: {
                 required: "Это поле обязательно для заполнения",
-                minlength: "В имени должно быть не менее 3-х символов"
+                minlength: "В имени должно быть не менее 3-х символов",
+                maxlength: "В имени должно быть менее 200 символов"
             },
             surName: {
                 required: "Это поле обязательно для заполнения",
-                minlength: "В фамилии должно быть не менее 3-х символов"
+                minlength: "В фамилии должно быть не менее 3-х символов",
+                maxlength: "В фамилии должно быть менее 200 символов"
             },
             email: {
                 required: "Это поле обязательно для заполнения",
-                customEmail: "Проверьте корректность email"
+                customEmail: "Проверьте корректность email",
+                maxlength: "В email должно быть менее 200 символов"
             },
             phoneNumber: {
                 required: "Это поле обязательно для заполнения",
@@ -103,7 +112,8 @@ $(document).ready(function(){
             password: {
                 required: "Это поле обязательно для заполнения",
                 pwcheck: "Требования к паролю:<br><ul style=\"padding-left: 1em\"><li>• Минимальная длина - 8 символов</li><li>• Содержит минимум один строчный символ</li><li>• Содержит минимум одну цифру</li>• Допустимые символы: A-Z a-z 0-9 @ * _ - . !</ul>",
-                minlength: "Минимальная длина пароля должна быть 8 символов"
+                minlength: "Минимальная длина пароля должна быть 8 символов",
+                maxlength: "В email должно быть менее 200 символов"
             },
             password2: {
                 required: "Это поле обязательно для заполнения",
