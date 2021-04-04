@@ -1,9 +1,5 @@
 
 $(document).ready(function() {
-<<<<<<< HEAD
-    $("#authorization_button").on("click", function(){
-        $("#authorization_modal").css("display", "flex");
-=======
 
     // Нажатие на кнопку "Авторизоваться"
     $("#authorization_button, .modals button:eq(0)").on("click", function(){
@@ -12,7 +8,6 @@ $(document).ready(function() {
         $("#form_authorization").css("display", "block");
         $(".modals button:eq(0)").css("background-color", "#5B5B5B");
         $(".modals button:eq(1)").css("background-color", "#A7A7A7");
->>>>>>> 8bc975b8b7a8ea40cb8c9c3eb647153a8e48a28d
     });
 
     // Нажатие на кнопку "Зарегистрироваться"
