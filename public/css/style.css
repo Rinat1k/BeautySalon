@@ -213,7 +213,7 @@ h2 {
 	display:flex;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	display: none;
 }
 
@@ -221,7 +221,7 @@ h2 {
 .modals{
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	
-	background-color: #fff;
+	background-color: rgb(243, 243, 243);
 	border-radius: 3px;
 	
 }
@@ -246,13 +246,14 @@ h2 {
 	width: 100%;
 	height: 2em;
 	border: 1px solid #AAA;
-	border-radius: 3px;
+	padding-left: 0.5em;
 }
 
 .field-block {
 	padding: 10px 20px;
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 }
 
 #form_authorization, #form_registration {
@@ -275,17 +276,35 @@ h2 {
 	background: #1a921a;
 }
 
+#field-block-two {
+	flex-direction: row;
+}
 
 #field-block-two input {
-	width: 49%;
+	width: 100%;
 }
 
 #field-block-gender {
-	
 	flex-direction: column;
 }
+
 
 #field-block-gender input {
 	width: 1em;
 	height: 1em;
+}
+
+input.error {
+	color: black;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.error {
+	color: #DC143C;
+	font-weight: normal;
+}
+
+input.error {
+    border: solid 1px #ff0000;
 }
