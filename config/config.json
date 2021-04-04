@@ -2,11 +2,10 @@
     "serverConfig":
     {
         "PORT":3000
-
     },
     "sessionConfig":
     {
-        "secretkey":"secretKey"
+        "secretKey":"SevGU"
     },
     "dbConfig":
     {
