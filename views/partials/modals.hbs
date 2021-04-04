@@ -8,10 +8,10 @@
 
         <form id="form_authorization" action="" method="post">
             <div class="field-block">
-                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field-block">
-                <input type="text" placeholder="Пароль">
+                <input type="text" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
                 <button type="submit">Войти</button>
@@ -20,32 +20,32 @@
 
         <form id="form_registration" action="" method="post">
             <div class="field-block" id="field-block-two">
-                <input type="text" placeholder="Фамилия">
-                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Имя" name="name">
+                <input type="text" placeholder="Фамилия" name="surName">
             </div>
             
             <div class="field-block">
-                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field-block">
-                <input type="text" placeholder="Телефон">
+                <input type="text" placeholder="Телефон" name="phoneNumber">
             </div>
             <div class="field-block">
-                <input type="text" placeholder="Дата рождения">
+                <input type="text" placeholder="Дата рождения" name="birthday">
             </div>
             <div class="field-block" id="field-block-gender">
                 <span>
-                    <input type="radio" name="gender" value="мужской" style="vertical-align:middle;margin:0;"><span> мужской</span>
+                    <input type="radio" name="gender" value="М" style="vertical-align:middle;margin:0;"><span> мужской</span>
                 </span>
             </div>
             <div class="field-block" id="field-block-gender">
                 <span>
-                    <input type="radio" name="gender" value="женский" style="vertical-align:middle;margin:0;"><span> женский</span>    
+                    <input type="radio" name="gender" value="Ж" style="vertical-align:middle;margin:0;"><span> женский</span>    
                 </span>
             </div>
 
             <div class="field-block">
-                <input type="password" placeholder="Пароль">
+                <input type="password" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
                 <input type="password" placeholder="Пароль ещё раз">
