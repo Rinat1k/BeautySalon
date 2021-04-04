@@ -16,11 +16,11 @@ $(document).ready(function(){
         }, 
         "Проверьте корректность даты рождения"
     );
-    $.validator.addMethod("pwcheck",
-        function(value, element) {
-            return /^[A-Za-z0-9\d=!\-@._*]+$/.test(value);
-        }
-    );
+    $.validator.addMethod("pwcheck", function(value) {
+        return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+            && /[a-z]/.test(value) // has a lowercase letter
+            && /\d/.test(value) // has a digit
+     });
     
     $("#form_authorization").validate({
         rules: {
@@ -70,6 +70,7 @@ $(document).ready(function(){
             },
             password: {
                 required: true,
+                pwcheck: true,
                 minlength: 8
             },
             password2: {
@@ -101,6 +102,7 @@ $(document).ready(function(){
             },
             password: {
                 required: "Это поле обязательно для заполнения",
+                pwcheck: "Требования к паролю:<br><ul style=\"padding-left: 1em\"><li>• Минимальная длина - 8 символов</li><li>• Содержит минимум один строчный символ</li><li>• Содержит минимум одну цифру</li>• Допустимые символы: A-Z a-z 0-9 @ * _ - . !</ul>",
                 minlength: "Минимальная длина пароля должна быть 8 символов"
             },
             password2: {
