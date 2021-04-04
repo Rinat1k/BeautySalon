@@ -12,10 +12,12 @@ module.exports = (req,res) =>
         }
         else
         {
+            let birthdayData = req.body.birthday.split(".")[2]+"-"+req.body.birthday.split(".")[1]+"-"+req.body.birthday.split(".")[0];
+            console.log(birthdayData);
             user.user.create({
                 name:req.body.name,
                 surname:req.body.surName,
-                birthday:req.body.birthday,
+                birthday:birthdayData,
                 gender:req.body.gender,
                 phoneNumber:req.body.phoneNumber,
                 email:req.body.email,

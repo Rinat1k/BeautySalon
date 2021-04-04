@@ -1,7 +1,9 @@
+const config = require("../config/config.json");
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("beauty_salon_db", "root", "root", {
-    dialect: "mysql",
-    host: "localhost"
+const sequelize = new Sequelize(config.dbConfig.nameDb, config.dbConfig.login, config.dbConfig.password, 
+  {
+    dialect: config.dbConfig.dialect,
+    host: config.dbConfig.host
   });
 sequelize.sync().then(result => 
   {
