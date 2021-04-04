@@ -11,16 +11,19 @@
                 <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field-block">
-                <input type="text" placeholder="Пароль" name="password">
+                <input type="password" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
-                <button type="submit">Войти</button>
+                <button>Войти</button>
             </div>
         </form>
 
         <form id="form_registration" action="" method="post">
-            <div class="field-block" id="field-block-two">
+           
+            <div class="field-block">
                 <input type="text" placeholder="Имя" name="name">
+            </div>
+            <div class="field-block">
                 <input type="text" placeholder="Фамилия" name="surName">
             </div>
             
@@ -42,13 +45,15 @@
                 <span>
                     <input type="radio" name="gender" value="Ж" style="vertical-align:middle;margin:0;"><span> женский</span>    
                 </span>
+                <label for="gender" class="error"></label>
             </div>
+            
 
             <div class="field-block">
-                <input type="password" placeholder="Пароль" name="password">
+                <input type="password" placeholder="Пароль" name="password" id="mainpassword">
             </div>
             <div class="field-block">
-                <input type="password" placeholder="Пароль ещё раз">
+                <input type="password" placeholder="Пароль ещё раз" name="password2">
             </div>
             <div class="field-block">
                 <button type="submit">Зарегистрироваться</button>
