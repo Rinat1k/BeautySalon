@@ -1,73 +1,60 @@
 <!-- Форма авторизации -->
 <div class="modals_wrapper" id="authorization_modal">
-    <div class="modals">
-        <form action="/login" method="post">
-            <a class="close_modal">Закрыть</a>
+    <div class="modals col-lg-3">
+        <div class="authorization_nav">
+            <button type="button">ВХОД</button>
+            <button type="button">РЕГИСТРАЦИЯ</button>
+        </div>
+
+        <form id="form_authorization" action="/login" method="post">
             <div class="field-block">
-                <label for="name">Email:</label><br>
-                <input type="text" name = "email">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field-block">
-                <label for="name">Пароль:</label><br>
-                <input type="text" name = "password">
+                <input type="text" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
-                <button type="reset">Очистить</button>
                 <button type="submit">Войти</button>
             </div>
         </form>
-    </div>
-</div>
 
 <!-- Форма регистрации -->
-<div class="modals_wrapper" id="registration_modal">
-    <div class="modals">
-        <form action="/register" method="post">
-            <a class="close_modal">Закрыть</a>
+        <form id="form_registration" action="/register" method="post">
+            <div class="field-block" id="field-block-two">
+                <input type="text" placeholder="Имя" name="name">
+                <input type="text" placeholder="Фамилия" name="surName">
+            </div>
+            
             <div class="field-block">
-                <label for="surname">Фамилия:</label><br>
-                <input type="text" name = "surName">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field-block">
-                <label for="name">Имя:</label><br>
-                <input type="text" name = "name">
+                <input type="text" placeholder="Телефон" name="phoneNumber">
             </div>
             <div class="field-block">
-                <label for="email">Email:</label><br>
-                <input type="text" name = "email">
+                <input type="text" placeholder="Дата рождения" name="birthday">
             </div>
-            <div class="field-block">
-                <label for="phone">Телефон:</label><br>
-                <input type="text" name = "phoneNumber">
+            <div class="field-block" id="field-block-gender">
+                <span>
+                    <input type="radio" name="gender" value="М" style="vertical-align:middle;margin:0;"><span> мужской</span>
+                </span>
             </div>
-            <div class="field-block">
-                <label for="birthday">Дата рождения:</label><br>
-                <input type="text" name = "birthday">
-            </div>
-            <div class="field-block">
-                <label for="gender">Пол:</label><br>
-                <label>
-                    <input type="radio" name="gender" value="М">мужской
-                    <div class="radio-control male"></div>
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="Ж">женский
-                    <div class="radio-control female"></div>
-                </label>
+            <div class="field-block" id="field-block-gender">
+                <span>
+                    <input type="radio" name="gender" value="Ж" style="vertical-align:middle;margin:0;"><span> женский</span>    
+                </span>
             </div>
 
             <div class="field-block">
-                <label for="password">Пароль:</label><br>
-                <input type="password" name = "password">
+                <input type="password" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
-                <label for="password2">Повторите пароль:</label><br>
-                <input type="password">
+                <input type="password" placeholder="Введите пароль ещё раз">
             </div>
             <div class="field-block">
-                <button type="reset">Очистить</button>
                 <button type="submit">Зарегистрироваться</button>
             </div>
         </form>
     </div>
 </div>
+
