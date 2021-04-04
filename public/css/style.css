@@ -222,23 +222,70 @@ h2 {
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	
 	background-color: #fff;
-	text-align: center;
+	border-radius: 3px;
 	
 }
 
+
+
+.authorization_nav{
+	display: flex;
+}
+
+
+.authorization_nav button {
+	background-color: #A7A7A7;
+	color: #fff;
+	height: 3em;
+	border: 0;
+	padding: 0;
+	width: 50%;
+}
+
+.modals input {
+	width: 100%;
+	height: 2em;
+	border: 1px solid #AAA;
+	border-radius: 3px;
+}
+
 .field-block {
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#form_authorization, #form_registration {
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
 
-
-.background_wrapper{
+#form_authorization button, #form_registration button {
+	margin: 10px 0 0 0;
+	background: #228B22;
+	color: white;
+	border-radius: 3px;
+	border: 0;
+	height: 3em;
 	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: 1040;
-	top:0;
-	left:0;
-	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#form_authorization button:hover, #form_registration button:hover {
+	background: #1a921a;
+}
+
+
+#field-block-two input {
+	width: 49%;
+}
+
+#field-block-gender {
 	
+	flex-direction: column;
+}
+
+#field-block-gender input {
+	width: 1em;
+	height: 1em;
 }

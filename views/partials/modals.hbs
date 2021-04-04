@@ -1,73 +1,59 @@
 <!-- Форма авторизации -->
 <div class="modals_wrapper" id="authorization_modal">
-    <div class="modals">
-        <form action="" method="post">
-            <a class="close_modal">Закрыть</a>
+    <div class="modals col-lg-3">
+        <div class="authorization_nav">
+            <button type="button">ВХОД</button>
+            <button type="button">РЕГИСТРАЦИЯ</button>
+        </div>
+
+        <form id="form_authorization" action="" method="post">
             <div class="field-block">
-                <label for="name">Email:</label><br>
-                <input type="text">
+                <input type="text" placeholder="Email">
             </div>
             <div class="field-block">
-                <label for="name">Пароль:</label><br>
-                <input type="text">
+                <input type="text" placeholder="Пароль">
             </div>
             <div class="field-block">
-                <button type="reset">Очистить</button>
                 <button type="submit">Войти</button>
             </div>
         </form>
-    </div>
-</div>
 
-<!-- Форма регистрации -->
-<div class="modals_wrapper" id="registration_modal">
-    <div class="modals">
-        <form action="" method="post">
-            <a class="close_modal">Закрыть</a>
+        <form id="form_registration" action="" method="post">
+            <div class="field-block" id="field-block-two">
+                <input type="text" placeholder="Фамилия">
+                <input type="text" placeholder="Имя">
+            </div>
+            
             <div class="field-block">
-                <label for="surname">Фамилия:</label><br>
-                <input type="text">
+                <input type="text" placeholder="Email">
             </div>
             <div class="field-block">
-                <label for="name">Имя:</label><br>
-                <input type="text">
+                <input type="text" placeholder="Телефон">
             </div>
             <div class="field-block">
-                <label for="email">Email:</label><br>
-                <input type="text">
+                <input type="text" placeholder="Дата рождения">
             </div>
-            <div class="field-block">
-                <label for="phone">Телефон:</label><br>
-                <input type="text">
+            <div class="field-block" id="field-block-gender">
+                <span>
+                    <input type="radio" name="gender" value="мужской" style="vertical-align:middle;margin:0;"><span> мужской</span>
+                </span>
             </div>
-            <div class="field-block">
-                <label for="birthday">Дата рождения:</label><br>
-                <input type="text">
-            </div>
-            <div class="field-block">
-                <label for="gender">Пол:</label><br>
-                <label>
-                    <input type="radio" name="gender" value="мужской">мужской
-                    <div class="radio-control male"></div>
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="женский">женский
-                    <div class="radio-control female"></div>
-                </label>
+            <div class="field-block" id="field-block-gender">
+                <span>
+                    <input type="radio" name="gender" value="женский" style="vertical-align:middle;margin:0;"><span> женский</span>    
+                </span>
             </div>
 
             <div class="field-block">
-                <label for="password">Пароль:</label><br>
-                <input type="password">
+                <input type="password" placeholder="Пароль">
             </div>
             <div class="field-block">
-                <label for="password2">Повторите пароль:</label><br>
-                <input type="password">
+                <input type="password" placeholder="Пароль ещё раз">
             </div>
             <div class="field-block">
-                <button type="reset">Очистить</button>
                 <button type="submit">Зарегистрироваться</button>
             </div>
         </form>
     </div>
 </div>
+
