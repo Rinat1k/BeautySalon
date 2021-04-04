@@ -1,0 +1,25 @@
+{
+    "serverConfig":
+    {
+        "PORT":3000
+
+    },
+    "sessionConfig":
+    {
+        "secretkey":"secretKey"
+    },
+    "dbConfig":
+    {
+        "nameDb":"beauty_salon_db",
+        "login":"root",
+        "password":"root",
+        "host":"localhost",
+        "dialect":"mysql"
+    },
+    "hbsConfig":
+    {
+        "layoutsDir":"views/layouts",
+        "defaultLayout":"layout",
+        "extname":"hbs"
+    }
+}
