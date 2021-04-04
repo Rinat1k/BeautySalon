@@ -1,15 +1,15 @@
 <!-- Форма авторизации -->
 <div class="modals_wrapper" id="authorization_modal">
     <div class="modals">
-        <form action="" method="post">
+        <form action="/login" method="post">
             <a class="close_modal">Закрыть</a>
             <div class="field-block">
                 <label for="name">Email:</label><br>
-                <input type="text">
+                <input type="text" name = "email">
             </div>
             <div class="field-block">
                 <label for="name">Пароль:</label><br>
-                <input type="text">
+                <input type="text" name = "password">
             </div>
             <div class="field-block">
                 <button type="reset">Очистить</button>
@@ -22,43 +22,43 @@
 <!-- Форма регистрации -->
 <div class="modals_wrapper" id="registration_modal">
     <div class="modals">
-        <form action="" method="post">
+        <form action="/register" method="post">
             <a class="close_modal">Закрыть</a>
             <div class="field-block">
                 <label for="surname">Фамилия:</label><br>
-                <input type="text">
+                <input type="text" name = "surName">
             </div>
             <div class="field-block">
                 <label for="name">Имя:</label><br>
-                <input type="text">
+                <input type="text" name = "name">
             </div>
             <div class="field-block">
                 <label for="email">Email:</label><br>
-                <input type="text">
+                <input type="text" name = "email">
             </div>
             <div class="field-block">
                 <label for="phone">Телефон:</label><br>
-                <input type="text">
+                <input type="text" name = "phoneNumber">
             </div>
             <div class="field-block">
                 <label for="birthday">Дата рождения:</label><br>
-                <input type="text">
+                <input type="text" name = "birthday">
             </div>
             <div class="field-block">
                 <label for="gender">Пол:</label><br>
                 <label>
-                    <input type="radio" name="gender" value="мужской">мужской
+                    <input type="radio" name="gender" value="М">мужской
                     <div class="radio-control male"></div>
                 </label>
                 <label>
-                    <input type="radio" name="gender" value="женский">женский
+                    <input type="radio" name="gender" value="Ж">женский
                     <div class="radio-control female"></div>
                 </label>
             </div>
 
             <div class="field-block">
                 <label for="password">Пароль:</label><br>
-                <input type="password">
+                <input type="password" name = "password">
             </div>
             <div class="field-block">
                 <label for="password2">Повторите пароль:</label><br>

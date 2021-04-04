@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const bodyParser = require("body-parser");
-const authController = require("../controllers/auth");
+const registerController = require("../controllers/register");
+const loginController = require("../controllers/login");
 
 const urlEncodedParser = bodyParser.urlencoded({extended: false});
 router.get("/",(req,res)=>
@@ -21,6 +22,8 @@ router.get("/map",(req,res)=>
         title:"Карта"
     });
 });
-router.post("/register",authController.register);
+router.post("/register",urlEncodedParser,registerController);
+
+router.post("/login",urlEncodedParser,loginController);
 
 module.exports = router;
