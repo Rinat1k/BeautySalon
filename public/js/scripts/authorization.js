@@ -30,12 +30,42 @@ $(document).ready(function() {
             $(".modals_wrapper").css("display", "none");
         }
     });
-    /*
-    $("body").on("click", ".authorization_form", function(){
-        alert(2);
+
+    $(() => {
+        $("#login").on("click",(event) => {
+            event.preventDefault();
+            console.log("запрос  об авторизации отослан");
+            $.ajax({    
+                url: $("#form_authorization").attr('action'),
+                data: $("#form_authorization").serialize(),
+                type: 'POST',
+                success: function(res){
+                        console.log(`Ошибкаа ли это? => ${res.isError}`);
+                        console.log(`Сообщение от сервера => ${res.message}`);
+                },
+                error: function(){
+                    console.log("Ошибка сервера");
+                }
+            });
+        });
     });
-    */
-
-
+    $(() => {
+        $("#register").on("click",(event) => {
+            event.preventDefault();
+            console.log("запрос об регистрации отослан");
+            $.ajax({    
+                url: $("#form_registration").attr('action'),
+                data: $("#form_registration").serialize(),
+                type: 'POST',
+                success: function(res){
+                        console.log(`Ошибкаа ли это? => ${res.isError}`);
+                        console.log(`Сообщение от сервера => ${res.message}`);
+                },
+                error: function(){
+                    console.log("Ошибка сервера");
+                }
+            });
+        });
+    });
   
 });

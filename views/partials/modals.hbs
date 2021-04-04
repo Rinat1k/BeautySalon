@@ -6,7 +6,7 @@
             <button type="button">РЕГИСТРАЦИЯ</button>
         </div>
 
-        <form id="form_authorization" action="/login" method="post">
+        <form id="form_authorization" action="/login">
             <div class="field-block">
                 <input type="text" placeholder="Email" name="email">
             </div>
@@ -14,11 +14,10 @@
                 <input type="password" placeholder="Пароль" name="password">
             </div>
             <div class="field-block">
-                <button>Войти</button>
+                <button id ="login">Войти</button>
             </div>
         </form>
-        <form id="form_registration" action="/register" method="post">
-           
+        <form id="form_registration" action="/register">
             <div class="field-block">
                 <input type="text" placeholder="Имя" name="name">
             </div>
@@ -54,7 +53,7 @@
                 <input type="password" placeholder="Пароль ещё раз" name="password2">
             </div>
             <div class="field-block">
-                <button type="submit">Зарегистрироваться</button>
+                <button id ="register">Зарегистрироваться</button>
             </div>
         </form>
     </div>
