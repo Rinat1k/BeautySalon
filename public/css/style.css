@@ -219,11 +219,10 @@ h2 {
 
 
 .modals{
+	width: 25em;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	
 	background-color: rgb(243, 243, 243);
 	border-radius: 3px;
-	
 }
 
 
