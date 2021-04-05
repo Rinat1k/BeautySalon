@@ -26,11 +26,10 @@ $(document).ready(function() {
     });
 
     // Обработчик выхода из модального окна
-    $("body").on("click", function(e){
+    $("body").on("submit", function(e){
         var el = e ? e.target : window.event.srcElement;
         if (el.className === 'modals_wrapper') {
             $(".modals_wrapper").css("display", "none");
         }
     });
-  
 });
