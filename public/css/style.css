@@ -249,21 +249,21 @@ h2 {
 	padding-left: 0.5em;
 }
 
+.form_wrapper {
+	padding: 0px 20px 20px 20px;
+}
+
 .field-block {
-	padding: 10px 20px;
+	padding-top: 20px;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 }
 
-#form_authorization, #form_registration {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
+
 
 
 #form_authorization button, #form_registration button {
-	margin: 10px 0 0 0;
 	background: #228B22;
 	color: white;
 	border-radius: 3px;
@@ -307,4 +307,16 @@ input.error {
 
 input.error {
     border: solid 1px #ff0000;
+}
+
+
+.notifications_block{
+	font-size: 0.8em;
+	display: none;
+	margin-top: 20px;
+	border: solid 1px #AE2B2B;
+	border-radius: 3px;
+	color: #D41A1A;
+	padding: 10px 20px 10px 1em;
+	background: #FFDDDD;
 }

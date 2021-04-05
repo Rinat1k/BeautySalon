@@ -34,6 +34,13 @@ module.exports = (req,res) =>
                             message:"Вы ввели неправильную почту или пароль."
                         });   
                     }
+                    else
+                    {
+                        res.send({
+                        isError:true,
+                            message:"Вы ввели неправильную почту или пароль."
+                        });
+                    }
                 }).catch(
                     (err)=>{
                         res.send("Ошибка сервера");
