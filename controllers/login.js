@@ -26,7 +26,13 @@ module.exports = (req,res) =>
                            isError:false,
                            message:"Пользователь авторизован" 
                         });
-                        //console.log("Токен: " + token);
+                    }
+                    else
+                    {
+                        res.send({
+                            isError:true,
+                            message:"Вы ввели неправильную почту или пароль."
+                        });   
                     }
                 }).catch(
                     (err)=>{
@@ -42,5 +48,5 @@ module.exports = (req,res) =>
                 });
             }
         }
-    )
+    );
 }
