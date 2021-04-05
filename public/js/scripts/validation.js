@@ -55,10 +55,11 @@ $(document).ready(function(){
                     console.log(`Сообщение от сервера => ${res.message}`);
                     // Действие при отсутствии нужного пользователя
                     if(res.isError){
-                        $(".notifications_block").slideDown( "fast", function() {});
-                        $(".notifications_block").text(res.message);
+                        HideNotification();
+                        ShowNotification(".form_wrapper", res.message, true);
                     } else {
-                        $(".notifications_block").hide();
+                        HideNotification();
+                        ShowNotification(".form_wrapper", res.message, false);
                         $(".modals_wrapper").hide();
                     }  
                 },
@@ -154,11 +155,12 @@ $(document).ready(function(){
                     console.log(`Ошибкаа ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
                     if(res.isError){
-                        $(".notifications_block").slideDown( "fast", function() {});
-                        $(".notifications_block").text(res.message);
+                        HideNotification();
+                        ShowNotification(".form_wrapper", res.message, true);
                     } else {
-                        $(".notifications_block").hide();
-                        $(".modals_wrapper").hide();
+                        HideNotification();
+                        ShowAuthorizationModal();
+                        ShowNotification(".form_wrapper", res.message, false);
                     }
                 },
                 error: function(){
