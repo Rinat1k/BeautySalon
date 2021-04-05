@@ -28,6 +28,13 @@ module.exports = (req,res) =>
                         });
                         //console.log("Токен: " + token);
                     }
+                    else
+                    {
+                        res.send({
+                        isError:true,
+                            message:"Вы ввели неправильную почту или пароль."
+                        });
+                    }
                 }).catch(
                     (err)=>{
                         res.send("Ошибка сервера");

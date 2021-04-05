@@ -45,13 +45,13 @@ $(document).ready(function(){
             }
         },
         submitHandler: function(form) {
-            console.log("запрос  об авторизации отослан");
+            console.log("Запрос  об авторизации отослан");
             $.ajax({    
                 url: $("#form_authorization").attr('action'),
                 data: $("#form_authorization").serialize(),
                 type: 'POST',
                 success: function(res){
-                    console.log(`Ошибкаа ли это? => ${res.isError}`);
+                    console.log(`Ошибка ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
                     // Действие при отсутствии нужного пользователя
                     if(res.isError){
@@ -60,8 +60,7 @@ $(document).ready(function(){
                     } else {
                         $(".notifications_block").hide();
                         $(".modals_wrapper").hide();
-                    }
-                    
+                    }  
                 },
                 error: function(){
                     console.log("Ошибка сервера");
@@ -154,7 +153,6 @@ $(document).ready(function(){
                 success: function(res){
                     console.log(`Ошибкаа ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
-
                     if(res.isError){
                         $(".notifications_block").show();
                         $(".notifications_block").text(res.message);
