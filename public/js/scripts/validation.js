@@ -55,7 +55,7 @@ $(document).ready(function(){
                     console.log(`Сообщение от сервера => ${res.message}`);
                     // Действие при отсутствии нужного пользователя
                     if(res.isError){
-                        $(".notifications_block").show();
+                        $(".notifications_block").slideDown( "fast", function() {});
                         $(".notifications_block").text(res.message);
                     } else {
                         $(".notifications_block").hide();
@@ -154,7 +154,7 @@ $(document).ready(function(){
                     console.log(`Ошибкаа ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
                     if(res.isError){
-                        $(".notifications_block").show();
+                        $(".notifications_block").slideDown( "fast", function() {});
                         $(".notifications_block").text(res.message);
                     } else {
                         $(".notifications_block").hide();
