@@ -21,26 +21,31 @@ module.exports = function(sequelize)
             type: Sequelize.STRING,
             allowNull:false
         },
+        phoneNumber:
+        {
+            type:Sequelize.STRING,
+            allowNull:false
+        },
         link:
         {
             type:Sequelize.STRING,
             allowNull:false,
             defaultValue:"Без ссылки"
         },
-        fromTime:
+        schedule:
         {
-            type:Sequelize.DATE,
-            allowNull:false
-        },
-        tillTime:
-        {
-            type:Sequelize.DATE,
+            type:Sequelize.STRING,
             allowNull:false
         },
         occupation:
         {
             type:Sequelize.ENUM,
             values: ['Род деятельности 1', 'Род деятельности 2', 'Род деятельности 3']
+        },
+        typeofSalon:
+        {
+            type:Sequelize.STRING,
+            allowNull:false
         },
         rating:
         {
