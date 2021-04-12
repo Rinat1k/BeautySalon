@@ -12,8 +12,10 @@ sequelize.sync().then(result =>
   .catch(err => console.log(err));
 
 const User = require("../models/User.js")(sequelize);
+const Salon = require("../models/Salon.js")(sequelize);
 
 module.exports = {
   sequelize: sequelize,
-  user : User
+  user : User,
+  salon: Salon,
 }

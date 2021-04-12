@@ -45,7 +45,7 @@ $(document).ready(function(){
             }
         },
         submitHandler: function(form) {
-            console.log("Запрос  об авторизации отослан");
+            //console.log("Запрос  об авторизации отослан");
             $.ajax({    
                 url: $("#form_authorization").attr('action'),
                 data: $("#form_authorization").serialize(),
@@ -53,6 +53,7 @@ $(document).ready(function(){
                 success: function(res){
                     console.log(`Ошибка ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
+                    console.log(`Токен => ${res.token}`);
                     // Действие при отсутствии нужного пользователя
                     if(res.isError){
                         HideNotification();
