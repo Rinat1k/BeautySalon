@@ -12,12 +12,15 @@ router.get("/",(req,res)=>
     });
 });
 router.get("/catalog",catalogMidleware);
+
 router.get("/map",(req,res)=>
 {
     res.render("map",{
         title:"Карта",
     });
 });
+
+
 router.post("/register",urlEncodedParser,registerMidleware);
 
 router.post("/login",urlEncodedParser,loginMidleware);
