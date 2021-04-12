@@ -78,21 +78,22 @@
 					<option value="value2">Стоимости</option>
 			  	</select>
 				</div>
-				{{#each salons}}
+				{{#each salonData}}
 				<div class="col-lg-6">
 					<div class="popular-item">
 						<div class="popular-item-photo">
-							<img src={{this.image}}>
-							<p>Рейтинг/Отзывы</p>
+							<img src="img/popular-item.jpg">
+							<p>Рейтинг: {{this.rating}}/5</p>
 						</div>
 						<div class="popular-item-desc">
-							<h5><b>Название</b></h5>
+							<h5><b>{{this.name}}</b></h5>
 							<div class="popular-item-desc-text">
-								<p style="color: #A7A7A7">{{this.occupation}}</p>
+								<p style="color: #A7A7A7">{{this.typeofSalon}}/{{this.occupation}}</p>
 								<br>
 
-								<p>пн-пт: с {{this.fromTime}} до {{this.tillTime}}</p>
-								<p>сб-вс: с {{this.fromTime}} до {{this.tillTime}}/p>
+								<p>{{this.scheldule}}</p>
+								<p>{{this.phoneNumber}}</p>
+							
 								<br>
 								<p>{{this.link}}</p>
 								<br>
