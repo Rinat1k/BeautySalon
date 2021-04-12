@@ -41,7 +41,7 @@
 
 	<section class="catalog-results">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="catalog">
 				<div class="col-lg-6">
 					<h2>Результаты</h2>
 				</div>
@@ -81,4 +81,10 @@
 				{{/each}}
 			</div>
 		</div>
+		<script>
+			$(document).ready(function() {
+				renderCatalog(temp);
+			});
+		</script>
 	</section>
+	

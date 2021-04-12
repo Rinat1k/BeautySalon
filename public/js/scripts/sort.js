@@ -10,7 +10,7 @@ $(document).ready(function() {
                     dataType: "JSON",
                     success: (data)=>
                     {
-                        console.log(data); //получение данных от сервера
+                        renderCatalog(data);
                     },
                     error: (data)=>
                     {
