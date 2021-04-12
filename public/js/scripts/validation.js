@@ -153,7 +153,7 @@ $(document).ready(function(){
                 data: $("#form_registration").serialize(),
                 type: 'POST',
                 success: function(res){
-                    console.log(`Ошибкаа ли это? => ${res.isError}`);
+                    console.log(`Ошибка ли это? => ${res.isError}`);
                     console.log(`Сообщение от сервера => ${res.message}`);
                     if(res.isError){
                         HideNotification();

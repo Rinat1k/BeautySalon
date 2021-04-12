@@ -45,3 +45,4 @@ function ShowRegistrationModal(){
     $(".modals button:eq(0)").css("color", "#F3F3F3");
     $("#form_registration").slideDown( "fast", function() {});
 }
+

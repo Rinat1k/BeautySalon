@@ -14,52 +14,26 @@
 	<section class="catalog-filters">
 		<div class="container catalog-filters">
 			<h2>ЧТО ИЩЕТЕ?</h2>
-			<div class="cl-lg-12">
-				<select>
-					<option value="" selected disabled hidden>Фильтр 1</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 2</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 3</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 4</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 5</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 6</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 7</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 8</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
-			  	<select>
-					<option value="" selected disabled hidden>Фильтр 9</option>
-				   	<option value="Undefined">Undefined 1</option>
-					<option value="saab">Undefined 2</option>
-			  	</select>
+
+			<div class="cl-lg-12 filters-wrapper">
+				<div>
+					<select>
+						<option value="" selected disabled hidden>Фильтр 1</option>
+						<option value="Undefined">Undefined 1</option>
+						<option value="saab">Undefined 2</option>
+					</select>
+					<select>
+						<option value="" selected disabled hidden>Фильтр 2</option>
+						<option value="Undefined">Undefined 1</option>
+						<option value="saab">Undefined 2</option>
+					</select>
+					<select>
+						<option value="" selected disabled hidden>Фильтр 3</option>
+						<option value="Undefined">Undefined 1</option>
+						<option value="saab">Undefined 2</option>
+					</select>
+				</div>
+				<button id="button-search">ФИЛЬТРОВАТЬ</button>
 			 </div>
 
 		</div>
@@ -72,11 +46,11 @@
 					<h2>Результаты</h2>
 				</div>
 				<div class="col-lg-6">
-					<select>
-					<option value="" selected disabled hidden>Сортировка по</option>
-				   	<option value="value1">Популярности</option>
-					<option value="value2">Стоимости</option>
-			  	</select>
+					<select id="sort-select">
+						<option value="" selected disabled hidden>Сортировка по</option>
+						<option value="sortByRating" id="sort-rating-onion">Рейтингу</option>
+						<option value="sortByName" id="sort-name-onion">Названию</option>
+			  		</select>
 				</div>
 				{{#each salonData}}
 				<div class="col-lg-6">
@@ -105,8 +79,6 @@
 				{{else}}
     				<h2>Салоны не найдены</h2>
 				{{/each}}
-
-				
 			</div>
 		</div>
 	</section>

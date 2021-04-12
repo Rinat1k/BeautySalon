@@ -193,11 +193,23 @@ h2 {
 }
 
 #button-search{
+	border: none;
+	padding: 5px 32px;
+	color: #fff;
+	background-color: #A7A7A7;
+}
+
+#button-filter{
 	width: 100%;
 	border: none;
 	padding: 5px 32px;
 	color: #fff;
 	background-color: #A7A7A7;
+}
+
+.filters-wrapper{
+	display: flex;
+	justify-content: space-between;
 }
 
 #input-search{
