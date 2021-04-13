@@ -192,11 +192,15 @@ h2 {
 	padding: 10px 10px;
 }
 
-#button-search{
+.button-search{
 	border: none;
 	padding: 5px 32px;
 	color: #fff;
 	background-color: #A7A7A7;
+}
+
+.button-search:hover{
+	background-color: #838383;
 }
 
 #button-filter{
@@ -207,9 +211,7 @@ h2 {
 	background-color: #A7A7A7;
 }
 
-#button-search:hover{
-	background-color: #838383;
-}
+
 
 .filters-wrapper{
 	display: flex;
