@@ -6,7 +6,7 @@ module.exports = (req,res) =>
     .then(users=>{
         if (users.length>0)
         {
-            res.send({
+            return res.send({
                 isError:true,
                 message:"Ошибка. Пользователь с такой почтой уже существует."
             });
@@ -26,7 +26,7 @@ module.exports = (req,res) =>
                     password:hashPassword
                 });
             });
-            res.send({
+            return res.send({
                 isError:false,
                 message:"Поздравляем! Вы были успешно зарегистрированы!",  
             });

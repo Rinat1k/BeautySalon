@@ -19,14 +19,22 @@
 				<div>
 					<select id="catalog-filter-1">
 						<option value="" selected disabled hidden>Тип заведения</option>
+							<!--СТЕРЕТЬ-->
+							<option value="Барбершоп">Барбершоп</option>
+							<option value="Салон красоты">Салон красоты</option>
+							<!--СТЕРЕТЬ-->
 						{{#each catalogFilterArray1}}
-							<option value="{{@index}}">{{this}}</option>
+							<!--<option value="{{@index}}">{{this}}</option>--> 
 						{{/each}}
 					</select>
 					<select id="catalog-filter-2">
 						<option value="" selected disabled hidden>Род деятельности</option>
+						<!--СТЕРЕТЬ-->
+							<option value="Парикмахерские услуги">Уход за волосами</option>
+							<option value="Массаж">Массаж</option>
+						<!--СТЕРЕТЬ-->
 						{{#each catalogFilterArray2}}
-							<option value="{{@index}}">{{this}}</option>
+							<!--<option value="{{@index}}">{{this}}</option>-->
 						{{/each}}
 					</select>
 				</div>

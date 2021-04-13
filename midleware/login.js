@@ -22,7 +22,7 @@ module.exports = (req,res) =>
                     if(argon2Match)
                     {
                         const token = getAccesToken(users.id);
-                        res.send({
+                        return res.send({
                            isError:false,
                            message:"Пользователь авторизован",
                            token:`Bearer ${token}`
@@ -31,20 +31,20 @@ module.exports = (req,res) =>
                     }
                     else
                     {
-                        res.send({
+                        return res.send({
                             isError:true,
                             message:"Вы ввели неправильную почту или пароль."
                         });   
                     }
                 }).catch(
                     (err)=>{
-                        res.send("Ошибка сервера");
+                        return res.send("Ошибка сервера");
                     }
                 );
             }
             else
             {
-                res.send({
+                return res.send({
                     isError:true,
                     message:"Вы ввели неправильную почту или пароль."
                 });

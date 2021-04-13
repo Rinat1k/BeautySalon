@@ -5,7 +5,7 @@ $(document).ready(function(){
         //let valueOfFilter3 = $("#catalog-filter-3").val() == null ? null : $("#catalog-filter-3 option:selected").text();
 
         $.ajax({    
-            url: "/catalog?filter1=" + valueOfFilter1 + "?filter2=" + valueOfFilter2,
+            url: "/catalog?filter1=" + valueOfFilter1 + "&filter2=" + valueOfFilter2,
             type: 'GET',
             dataType: "JSON",
             success: (data)=>

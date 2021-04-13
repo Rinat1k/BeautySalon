@@ -15,7 +15,7 @@ module.exports = (req,res)=>
                     }).then(
                         (sortedData)=>
                         {
-                            res.send(sortedData);
+                            return res.send(sortedData);
                         }
                     );
                 }break;
@@ -28,7 +28,7 @@ module.exports = (req,res)=>
                     }).then(
                         (sortedData)=>
                         {
-                            res.send(sortedData);
+                            return res.send(sortedData);
                         }
                     );
                 }break;
@@ -41,7 +41,7 @@ module.exports = (req,res)=>
                     }).then(
                         (sortedData)=>
                         {
-                            res.send(sortedData);
+                            return res.send(sortedData);
                         }
                     );
                 }break;
@@ -54,19 +54,54 @@ module.exports = (req,res)=>
                     }).then(
                         (sortedData)=>
                         {
-                            res.send(sortedData);
+                            return res.send(sortedData);
                         }
                     );
                 }break;
         }
     }
+    
+    if (req.query.filter1!=null&&req.query.filter2!=null)
+    {
+        salon.findAll({
+            where:{
+                typeofSalon: req.query.filter1,
+                occupation: req.query.filter2
+            },
+            raw: true
+        }).then(
+        (filtredData)=>
+            {
+                return res.send(filtredData);
+            }
+        );
+    }
+
+    console.log("Фильтр1 =" + req.query.filter1);
+    console.log("Фильтр2 ="+ req.query.filter2);
+    console.log("Выражение дает: ");
+    console.log(req.query.filter1=="null");
+    if (req.query.filter1=="null"&&req.query.filter2!=null)
+    {
+        salon.findAll({
+            where:{
+                occupation: req.query.filter2
+            },
+            raw: true
+        }).then(
+        (filtredData)=>
+            {
+                console.log("Отправка идет......");
+                return res.send(filtredData);
+            }
+        );
+    }
     salon.findAll().then(
         (salons)=>
         {
-            //console.log(salons);
-            res.render("catalog",{
+            return res.render("catalog",{
                 title:"Каталог",
-                salonData: salons 
+                salonData: salons
             });
         }
     )
