@@ -10,7 +10,9 @@ $(document).ready(function() {
                     dataType: "JSON",
                     success: (data)=>
                     {
+                        $("#catalog").empty();
                         renderCatalog(data);
+                        
                     },
                     error: (data)=>
                     {
@@ -28,7 +30,8 @@ $(document).ready(function() {
                     dataType: "JSON",
                     success: (data)=>
                     {
-                        console.log(data); //получение данных
+                        $("#catalog").empty();
+                        renderCatalog(data);
                     },
                     error: (data)=>
                     {

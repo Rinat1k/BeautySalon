@@ -41,7 +41,7 @@
 
 	<section class="catalog-results">
 		<div class="container">
-			<div class="row" id="catalog">
+			<div class="row">
 				<div class="col-lg-6">
 					<h2>Результаты</h2>
 				</div>
@@ -52,6 +52,8 @@
 						<option value="sortByName" id="sort-name-onion">Названию</option>
 			  		</select>
 				</div>
+			</div>
+			<div class="row" id="catalog">
 				{{#each salonData}}
 				<div class="col-lg-6">
 					<div class="popular-item">
@@ -77,14 +79,9 @@
 					</div>
 				</div>
 				{{else}}
-    				<h2>Салоны не найдены</h2>
+					<h2>Салоны не найдены</h2>
 				{{/each}}
 			</div>
 		</div>
-		<script>
-			$(document).ready(function() {
-				renderCatalog(temp);
-			});
-		</script>
 	</section>
 	
