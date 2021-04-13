@@ -10,7 +10,7 @@ module.exports = (req,res)=>
                 {
                     salon.findAll({
                         order: [
-                            ['rating', 'DESC'],
+                            ['rating', 'ASC'],
                             ],
                     }).then(
                         (sortedData)=>
@@ -20,6 +20,32 @@ module.exports = (req,res)=>
                     );
                 }break;
             case "sortByName":
+                {
+                    salon.findAll({
+                        order: [
+                            ['name', 'ASC'],
+                            ],
+                    }).then(
+                        (sortedData)=>
+                        {
+                            res.send(sortedData);
+                        }
+                    );
+                }break;
+            case "sortByRatingDesc":
+                {
+                    salon.findAll({
+                        order: [
+                            ['rating', 'DESC'],
+                            ],
+                    }).then(
+                        (sortedData)=>
+                        {
+                            res.send(sortedData);
+                        }
+                    );
+                }break;
+            case "sortByNameDesc":
                 {
                     salon.findAll({
                         order: [

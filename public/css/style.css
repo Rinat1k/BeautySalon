@@ -188,7 +188,7 @@ h2 {
 
 
 .catalog-results select {
-	width: 14em;
+	width: 18em;
 	padding: 10px 10px;
 }
 
@@ -205,6 +205,10 @@ h2 {
 	padding: 5px 32px;
 	color: #fff;
 	background-color: #A7A7A7;
+}
+
+#button-search:hover{
+	background-color: #838383;
 }
 
 .filters-wrapper{
