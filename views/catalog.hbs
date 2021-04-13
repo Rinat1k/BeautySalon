@@ -17,9 +17,11 @@
 
 			<div class="cl-lg-12 filters-wrapper">
 				<div>
+					<span>Тип заведения:</span>
 					<select id="catalog-filter-1">
-						<option value="" selected disabled hidden>Тип заведения</option>
+						<option value="default" selected dissabled hidden>Не выбрано</option>
 							<!--СТЕРЕТЬ-->
+							<option value="default">Не выбрано</option>
 							<option value="Барбершоп">Барбершоп</option>
 							<option value="Салон красоты">Салон красоты</option>
 							<!--СТЕРЕТЬ-->
@@ -27,10 +29,12 @@
 							<!--<option value="{{@index}}">{{this}}</option>--> 
 						{{/each}}
 					</select>
+					<span>Вид деятельности:</span>
 					<select id="catalog-filter-2">
-						<option value="" selected disabled hidden>Род деятельности</option>
+						<option value="default" selected dissabled hidden>Не выбрано</option>
 						<!--СТЕРЕТЬ-->
-							<option value="Парикмахерские услуги">Уход за волосами</option>
+							<option value="default">Не выбрано</option>
+							<option value="Уход за волосами">Уход за волосами</option>
 							<option value="Массаж">Массаж</option>
 						<!--СТЕРЕТЬ-->
 						{{#each catalogFilterArray2}}

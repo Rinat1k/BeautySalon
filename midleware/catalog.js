@@ -61,7 +61,8 @@ module.exports = (req,res)=>
         }
     }
     
-    if (req.query.filter1!=null&&req.query.filter2!=null)
+    
+    if (req.query.filter1!="default"&&req.query.filter2!="default")
     {
         salon.findAll({
             where:{
@@ -76,26 +77,50 @@ module.exports = (req,res)=>
             }
         );
     }
-
-    console.log("Фильтр1 =" + req.query.filter1);
-    console.log("Фильтр2 ="+ req.query.filter2);
-    console.log("Выражение дает: ");
-    console.log(req.query.filter1=="null");
-    if (req.query.filter1=="null"&&req.query.filter2!=null)
+    if (req.query.filter1=="default"&&req.query.filter2!="default")
     {
         salon.findAll({
             where:{
+                //typeofSalon: req.query.filter1,
                 occupation: req.query.filter2
             },
             raw: true
         }).then(
         (filtredData)=>
             {
-                console.log("Отправка идет......");
                 return res.send(filtredData);
             }
         );
     }
+    if (req.query.filter1!="default"&&req.query.filter2=="default")
+    {
+        salon.findAll({
+            where:{
+                typeofSalon: req.query.filter1,
+                //occupation: req.query.filter2
+            },
+            raw: true
+        }).then(
+        (filtredData)=>
+            {
+                return res.send(filtredData);
+            }
+        );
+    }
+    if (req.query.filter1=="default"&&req.query.filter2=="default")
+    {
+        salon.findAll({
+            where: true,
+            raw: true
+        }).then(
+        (filtredData)=>
+            {
+                return res.send(filtredData);
+            }
+        );
+    }
+    
+    
     salon.findAll().then(
         (salons)=>
         {

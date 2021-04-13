@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#button-filter-catalog").on("click", function(){
-        let valueOfFilter1 = $("#catalog-filter-1").val() == null ? null : $("#catalog-filter-1 option:selected").text();
-        let valueOfFilter2 = $("#catalog-filter-2").val() == null ? null : $("#catalog-filter-2 option:selected").text();
+        let valueOfFilter1 = $("#catalog-filter-1").val() == "default" ? "default" : $("#catalog-filter-1 option:selected").text();
+        let valueOfFilter2 = $("#catalog-filter-2").val() == "default" ? "default" : $("#catalog-filter-2 option:selected").text();
         //let valueOfFilter3 = $("#catalog-filter-3").val() == null ? null : $("#catalog-filter-3 option:selected").text();
 
         $.ajax({    
