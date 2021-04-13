@@ -5,9 +5,10 @@ module.exports = (req,res)=>
     
     var condition1 = req.query.filter1 != "default" ?  { typeofSalon: req.query.filter1 } : null;
     var condition2 = req.query.filter2 != "default" ?  { occupation: req.query.filter2 } : null;
+    var searchCondition = req.query.search != "" ? { name: req.query.search } : null;
 
     salon.findAll({
-        where: Object.assign({}, condition1 , condition2),
+        where: Object.assign({}, condition1 , condition2, searchCondition),
         raw: true
     }).then(
     (filtredData)=>
@@ -17,7 +18,7 @@ module.exports = (req,res)=>
                 case "sortByRating":
                     {
                             salon.findAll({
-                                where: Object.assign({}, condition1 , condition2),
+                                where: Object.assign({}, condition1 , condition2, searchCondition),
                                 order: [
                                     ['rating', 'ASC'],
                                     ],
@@ -31,7 +32,7 @@ module.exports = (req,res)=>
                 case "sortByName":
                     {
                         salon.findAll({
-                            where: Object.assign({}, condition1 , condition2),
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
                             order: [
                                 ['name', 'ASC'],
                                 ],
@@ -45,7 +46,7 @@ module.exports = (req,res)=>
                 case "sortByRatingDesc":
                     {
                         salon.findAll({
-                            where: Object.assign({}, condition1 , condition2),
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
                             order: [
                                 ['rating', 'DESC'],
                                 ],
@@ -59,7 +60,7 @@ module.exports = (req,res)=>
                 case "sortByNameDesc":
                     {
                         salon.findAll({
-                            where: Object.assign({}, condition1 , condition2),
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
                             order: [
                                 ['name', 'DESC'],
                                 ],
