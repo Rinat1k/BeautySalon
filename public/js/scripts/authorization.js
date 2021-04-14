@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-
     // Нажатие на кнопку "Авторизоваться"
     $("#authorization_button, .modals button:eq(0)").on("click", function(){
         ShowAuthorizationModal();
@@ -18,4 +17,22 @@ $(document).ready(function() {
             $(".modals_wrapper").css("display", "none");
         }
     });
+
+
+    $.ajax({    
+        url: "/catalog?sort=" + $("#sort-select").val() + "&filter1=" + valueOfFilter1 + "&filter2=" + valueOfFilter2 + "&search=" + $("#input-search").val(),
+        type: 'POST',
+        dataType: "JSON",
+        success: (data)=>
+        {
+            $("#catalog").empty();
+            renderCatalog(data);  
+        },
+        error: (data)=>
+        {
+            console.log("Ошибка: ");
+            console.log(data);
+        }
+    });
+
 });
