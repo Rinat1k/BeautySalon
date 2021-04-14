@@ -1,126 +1,82 @@
 const salon = require("../db/index.js").salon;
 module.exports = (req,res)=>
 {
-    if (req.query.sort!=null)
-    {
-        sortType = req.query.sort;
-        switch(sortType)
+    var sortType = req.query.sort;
+    
+    var condition1 = req.query.filter1 != "default" ?  { typeofSalon: req.query.filter1 } : null;
+    var condition2 = req.query.filter2 != "default" ?  { occupation: req.query.filter2 } : null;
+    var searchCondition = req.query.search != "" ? { name: req.query.search } : null;
+
+    salon.findAll({
+        where: Object.assign({}, condition1 , condition2, searchCondition),
+        raw: true
+    }).then(
+    (filtredData)=>
         {
-            case "sortByRating":
-                {
-                    salon.findAll({
-                        order: [
-                            ['rating', 'ASC'],
-                            ],
-                    }).then(
-                        (sortedData)=>
-                        {
-                            return res.send(sortedData);
-                        }
-                    );
+            switch(sortType)
+            {
+                case "sortByRating":
+                    {
+                            salon.findAll({
+                                where: Object.assign({}, condition1 , condition2, searchCondition),
+                                order: [
+                                    ['rating', 'ASC'],
+                                    ],
+                            }).then(
+                                (sortedData)=>
+                                {
+                                    return res.send(sortedData);
+                                }
+                            );
+                        }break;
+                case "sortByName":
+                    {
+                        salon.findAll({
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
+                            order: [
+                                ['name', 'ASC'],
+                                ],
+                        }).then(
+                            (sortedData)=>
+                            {
+                                return res.send(sortedData);
+                            }
+                        );
+                    }break;
+                case "sortByRatingDesc":
+                    {
+                        salon.findAll({
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
+                            order: [
+                                ['rating', 'DESC'],
+                                ],
+                        }).then(
+                            (sortedData)=>
+                            {
+                                return res.send(sortedData);
+                            }
+                        );
+                    }break;
+                case "sortByNameDesc":
+                    {
+                        salon.findAll({
+                            where: Object.assign({}, condition1 , condition2, searchCondition),
+                            order: [
+                                ['name', 'DESC'],
+                                ],
+                        }).then(
+                            (sortedData)=>
+                            {
+                                return res.send(sortedData);
+                            }
+                        );
                 }break;
-            case "sortByName":
-                {
-                    salon.findAll({
-                        order: [
-                            ['name', 'ASC'],
-                            ],
-                    }).then(
-                        (sortedData)=>
-                        {
-                            return res.send(sortedData);
-                        }
-                    );
-                }break;
-            case "sortByRatingDesc":
-                {
-                    salon.findAll({
-                        order: [
-                            ['rating', 'DESC'],
-                            ],
-                    }).then(
-                        (sortedData)=>
-                        {
-                            return res.send(sortedData);
-                        }
-                    );
-                }break;
-            case "sortByNameDesc":
-                {
-                    salon.findAll({
-                        order: [
-                            ['name', 'DESC'],
-                            ],
-                    }).then(
-                        (sortedData)=>
-                        {
-                            return res.send(sortedData);
-                        }
-                    );
-                }break;
+                default: return res.send(filtredData);
+            }
         }
-    }
-    
-    
-    if (req.query.filter1!="default"&&req.query.filter2!="default")
-    {
-        salon.findAll({
-            where:{
-                typeofSalon: req.query.filter1,
-                occupation: req.query.filter2
-            },
-            raw: true
-        }).then(
-        (filtredData)=>
-            {
-                return res.send(filtredData);
-            }
-        );
-    }
-    if (req.query.filter1=="default"&&req.query.filter2!="default")
-    {
-        salon.findAll({
-            where:{
-                //typeofSalon: req.query.filter1,
-                occupation: req.query.filter2
-            },
-            raw: true
-        }).then(
-        (filtredData)=>
-            {
-                return res.send(filtredData);
-            }
-        );
-    }
-    if (req.query.filter1!="default"&&req.query.filter2=="default")
-    {
-        salon.findAll({
-            where:{
-                typeofSalon: req.query.filter1,
-                //occupation: req.query.filter2
-            },
-            raw: true
-        }).then(
-        (filtredData)=>
-            {
-                return res.send(filtredData);
-            }
-        );
-    }
-    if (req.query.filter1=="default"&&req.query.filter2=="default")
-    {
-        salon.findAll({
-            where: true,
-            raw: true
-        }).then(
-        (filtredData)=>
-            {
-                return res.send(filtredData);
-            }
-        );
-    }
-    
-    
+    );
+
+  
     salon.findAll().then(
         (salons)=>
         {
@@ -129,5 +85,5 @@ module.exports = (req,res)=>
                 salonData: salons
             });
         }
-    )
+    );
 }
