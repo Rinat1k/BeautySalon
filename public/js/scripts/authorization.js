@@ -18,6 +18,22 @@ $(document).ready(function() {
         }
     });
 
+    $("#button-logout").on("click", function(){
+        $.ajax({    
+            url: "/logout",
+            type: 'GET',
+            success: (data)=>
+            {
+                $("#authbar li:eq(0), #authbar li:eq(1)").show();
+                $("#nav-name, #nav-logout").hide();
+            },
+            error: (data)=>
+            {
+                console.log("Ошибка: ");
+                console.log(data);
+            }
+        });
+    });
 
 
     $.ajax({    
