@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 });
 
-});
+
 
 $(document).ready(()=>
 {
@@ -47,10 +47,13 @@ $(document).ready(()=>
         $.ajax({    
             url: "/login",
             type: 'GET',
-            dataType: "text",
+            dataType: "json",
             success: (data)=>
             {
-                 console.log("Полученные данные " + data); //данные
+                $("#authbar li:eq(0), #authbar li:eq(1)").hide();
+                $("#nav-name, #nav-logout").show();
+                $("#nav-name a").append(data.name + " " + data.surname);
+               
             },
             error: (data)=>
             {

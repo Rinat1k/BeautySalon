@@ -62,6 +62,7 @@ $(document).ready(function(){
                         HideNotification();
                         ShowNotification(".form_wrapper", res.message, false);
                         $(".modals_wrapper").hide();
+                        location.reload();
                     }  
                 },
                 error: function(){
