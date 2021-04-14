@@ -27,7 +27,7 @@ $(document).ready(()=>
         $.ajax({    
             url: "/login",
             type: 'GET',
-            dataType: "text",
+            dataType: "json",
             success: (data)=>
             {
                  console.log("Полученные данные " + data); //данные
