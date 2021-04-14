@@ -19,6 +19,7 @@ $(document).ready(function() {
     });
 
 
+
     $.ajax({    
         url: "/catalog?sort=" + $("#sort-select").val() + "&filter1=" + valueOfFilter1 + "&filter2=" + valueOfFilter2 + "&search=" + $("#input-search").val(),
         type: 'POST',
@@ -36,3 +37,34 @@ $(document).ready(function() {
     });
 
 });
+
+});
+
+$(document).ready(()=>
+{
+    if (getCookie('authToken')!=undefined)
+    {
+        $.ajax({    
+            url: "/login",
+            type: 'GET',
+            dataType: "text",
+            success: (data)=>
+            {
+                 console.log("Полученные данные " + data); //данные
+            },
+            error: (data)=>
+            {
+                console.log("Ошибка: ");
+                console.log(data);
+            }
+        });
+    };
+});
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+

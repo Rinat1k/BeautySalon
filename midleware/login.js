@@ -2,7 +2,6 @@ const user = require("../db/index.js");
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config.json");
-const session = require("express-session");
 const secretKey = config.sessionConfig.secretKey;
 module.exports = (req,res) =>
 {
@@ -21,13 +20,13 @@ module.exports = (req,res) =>
                 {
                     if(argon2Match)
                     {
-                        const token = getAccesToken(users.id);
+                        const authToken = getAccesToken(users.id);
+                        res.cookie('authToken', authToken);
                         return res.send({
                            isError:false,
                            message:"Пользователь авторизован",
-                           token:`Bearer ${token}`
+                           token:`Bearer ${authToken}`
                         });
-                        console.log(`Сгенерирован токен: ${token}`);
                     }
                     else
                     {
