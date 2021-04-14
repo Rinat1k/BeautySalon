@@ -24,7 +24,6 @@ $(document).ready(function(){
     $("#button-search").on("click", function(){
         let valueOfFilter1 = $("#catalog-filter-1").val() == "default" ? "default" : $("#catalog-filter-1 option:selected").text();
         let valueOfFilter2 = $("#catalog-filter-2").val() == "default" ? "default" : $("#catalog-filter-2 option:selected").text();
-        alert($("#input-search").val());
 
         $.ajax({    
             url: "/catalog?sort=" + $("#sort-select").val() + "&filter1=" + valueOfFilter1 + "&filter2=" + valueOfFilter2 + "&search=" + $("#input-search").val(),

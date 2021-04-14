@@ -27,3 +27,10 @@ function renderCatalog(salons){
         );
     });
 }
+
+function renderAuthbar(){
+    $("#authbar").empty();
+    $("#authbar").append(
+        
+    );
+}
