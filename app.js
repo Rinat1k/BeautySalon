@@ -6,6 +6,7 @@ const session = require("express-session");
 const path = require("path");
 const routes = require("./routes/index");
 const config = require("./config/config.json");
+const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || config.serverConfig.PORT; //номер порта
 const app = express();
 const hbs = exprhbs.create(
@@ -22,6 +23,8 @@ app.engine("hbs",hbs.engine);
 
 app.set("view engine",config.hbsConfig.extname);
 app.set("views","views");
+
+app.use(cookieParser('secret key'))
 //Сессии
 app.use(
     session({

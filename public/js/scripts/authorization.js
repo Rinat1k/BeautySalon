@@ -19,3 +19,31 @@ $(document).ready(function() {
         }
     });
 });
+
+$(document).ready(()=>
+{
+    if (getCookie('authToken')!=undefined)
+    {
+        $.ajax({    
+            url: "/login",
+            type: 'GET',
+            dataType: "text",
+            success: (data)=>
+            {
+                 console.log("Полученные данные " + data); //данные
+            },
+            error: (data)=>
+            {
+                console.log("Ошибка: ");
+                console.log(data);
+            }
+        });
+    };
+});
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }

@@ -2,7 +2,6 @@ const user = require("../db/index.js");
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config.json");
-const cookieParser = require('cookie-parser');
 const secretKey = config.sessionConfig.secretKey;
 module.exports = (req,res) =>
 {
